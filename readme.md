@@ -1,6 +1,7 @@
 WIP
 
 League of Random
+
 Descripción del Proyecto
 League of Random es una aplicación de escritorio desarrollada para generar combinaciones aleatorias de campeones, ítems y hechizos de invocador para League of Legends. Esta herramienta permite a los jugadores experimentar nuevas configuraciones y desafíos al azar, promoviendo la creatividad y la diversión en el juego.
 
