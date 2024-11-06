@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script async src="front.js"></script>
+    <script async src="randomizer.js"></script>
+    <title>League of Random</title>
+</head>
+<body>
+    <div class="main-background">
+        <div id="intro">
+            <div class="main__container">
+                <div class="h1__container">
+                    <h1>Términos y Condiciones de Uso de League of Random</h1>
+                </div>
+                <div class="main-text__container">
+                    <p>Antes de usar League of Random, es importante que leas y aceptes los siguientes Términos y Condiciones. Al aceptar estos términos, reconoces que comprendes y respetas las políticas de uso de contenido de Riot Games y que te comprometes a cumplirlas.</p>
+                    <p>1. Propiedad de Riot Games: League of Random no está afiliado ni respaldado oficialmente por Riot Games. Todos los derechos sobre los personajes, nombres, objetos, y cualquier otro contenido relacionado con League of Legends son propiedad de Riot Games, Inc.</p>
+                    <p>2. Uso de Contenido de League of Legends: Este programa ha sido desarrollado de acuerdo con las políticas de uso de contenido de Riot Games, que permiten el uso limitado de su propiedad intelectual siempre que no se busque un beneficio económico directo ni se viole su licencia de usuario. El programa es gratuito y se distribuye solo con fines de entretenimiento personal.</p>
+                    <p>3. Limitación de Responsabilidad: Este software se proporciona "tal cual" y el autor no se hace responsable de cualquier problema o daño derivado de su uso. El programa no garantiza precisión ni disponibilidad continua.</p>
+                    <p>4. Prohibición de Uso Comercial: Queda estrictamente prohibido comercializar, monetizar o distribuir este programa con fines lucrativos. Riot Games tiene el derecho de revocar el uso de cualquier contenido relacionado con League of Legends si considera que estos términos han sido violados.</p>
+                    <p>5. Actualizaciones y Cambios: El autor se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Además, el usuario acepta que es su responsabilidad revisar cualquier cambio que Riot Games pueda realizar en sus políticas y ajustarse a ellos para continuar utilizando el programa.</p>
+                    <p>6. Aceptación: Al hacer clic en "Aceptar", reconoces que has leído, comprendido y aceptado estos Términos y Condiciones, y te comprometes a utilizarlos de acuerdo con las leyes de propiedad intelectual de Riot Games.</p>
+                </div>
+                <div class="button__container">
+                    <button id="first_button" class="button-primary">Siguiente</button>
+                </div>
+            </div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <p>¿Aceptas los Términos y Condiciones?</p>
+                    <button id="accept-btn">Aceptar</button>
+                    <button id="cancel-btn">Rechazar</button>
+                </div>
+            </div>
+        </div>
+        <div id="main__menu">
+            <div class="options-button__container">
+                <button class="optionsButton">⚙️</button>
+            </div>
+            <div class="optionsTab">
+                <div class="opciones">Opciones</div>
+                <div class="languageSelectorLabel">Idioma</div>
+                <select name="languageSelector" class="languageSelector">
+                    <option value="Spanish" selected>Español</option>
+                </select>
+                <div class="creadoPor">Desarrollado por Franco Nahuel Almeida (soydat)
+                    Esta aplicación ha sido creada y desarrollada por Franco Nahuel Almeida, conocido como soydat en GitHub. Todos los derechos reservados.
+                    Cualquier uso, reproducción o distribución sin autorización está prohibido.</div>
+                <button class="backFromOptionsButton">Volver atras</button>    
+            </div>
+            <div class="randomizer__container">
+                <div class="background"></div>
+                <div class="test-container">
+                    <div class="randomizer">
+                        <div class="randomizer-h1__container">
+                            <h1 id="tituloapp">League of Random</h1>
+                        </div>
+                        <div class="generatedchamp__container">
+                            <div class="left-gc__container">
+                                <div id="randomImgChamp"></div>
+                                <p id="randomChamp" class="randomNameChamp"></p>
+                                <p id="randomTitleChamp" class="randomTitleChampo"></p>
+                            </div>
+                            <div class="descriptionAndItems__Container">
+                                <p id="randomChampDescription" class="randomChampDescript"></p>
+                                <div class="itemsGeneratedContainer">
+                                    <div class="item-slot" id="item1"></div>
+                                    <div class="item-slot" id="item2"></div>
+                                    <div class="item-slot" id="item3" ></div>
+                                    <div class="item-slot" id="item4"></div>
+                                    <div class="item-slot" id="item5"></div>
+                                    <div class="item-slot" id="item6"></div>
+                                </div>
+                                <div class="summonersGeneratedContainer">
+                                    <div class="summoner-slot" id="summoner1"></div>
+                                    <div class="summoner-slot" id="summoner2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="randomButton" class="main-action">Randomizamelo!</button>
+                </div>
+                <div class="filter__container">
+                    <div class="background-filters__container">
+                        <label>
+                            <p>Solo Campeón</p>
+                            <input type="radio" id="only-champion" class="checkmark" name="filterchoice">
+                        </label>
+                        <label>
+                            <p>Solo Items</p>
+                            <input type="radio" id="only-items" class="checkmark" name="filterchoice">
+                        </label>
+                        <label>
+                            <p>Campeón, Objetos y Hechizos</p>
+                            <input type="radio" id="championAndItem" class="checkmark" name="filterchoice">
+                        </label>
+                    </div>
+                </div>
+            </div> 
+            <div class="version">Version 1.0.0</div>
+        </div>
+    </div>
+</body>
+</html>

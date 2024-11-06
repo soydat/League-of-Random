@@ -1,0 +1,33 @@
+{
+    "data":{
+        "summoners":{
+            "Barrier":{
+                "name": "Barrier"
+            },
+            "Boost":{
+                "name": "Cleanse"
+            },
+            "Exhaust":{
+                "name": "Exhaust"
+            },
+            "Flash":{
+                "name": "Flash"
+            },
+            "Haste":{
+                "name": "Ghost"
+            },
+            "Heal":{
+                "name": "Heal"
+            },
+            "Dot":{
+                "name": "Ignite"
+            },
+            "Teleport":{
+                "name": "Teleport"
+            },
+            "Smite":{
+                "name": "Smite"
+            }
+        }
+    }
+}
