@@ -1,11 +1,12 @@
 # League of Random
-![alt text](https://github.com/soydat/League-of-Random/blob/main/media/preview.jpeg?raw=true)
+![a preview image of the main menu](https://github.com/soydat/League-of-Random/blob/main/media/preview.jpeg?raw=true)
 
 ## Project Overview
 
 League of Random is a desktop application designed to generate random combinations of champions, items, and summoner spells for League of Legends. This tool allows players to explore new setups and embrace exciting in-game challenges, sparking creativity and adding a fresh layer of fun.
 
 ## Key Features
+![a preview image of the random generator](https://github.com/soydat/League-of-Random/blob/main/media/preview2.jpeg?raw=true)
 
 ### Random Champion Generation
 - Returns a randomly selected champion with their name, title, and a brief description.
