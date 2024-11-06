@@ -57,7 +57,11 @@ League of Random is a desktop application designed to generate random combinatio
 - Select your desired filters.
 - Click the generate button to view random results.
 
+### Current Language:
+- The project is currently available only in Spanish.
+
+### Contributions:
+- I welcome pull requests for code optimizations, improvements, or additions that enhance the program, including adding support for other languages.
+
 ## Credits
-
 This project was developed by Franco Nahuel Almeida. All rights reserved.
-
