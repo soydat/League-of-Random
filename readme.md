@@ -1,66 +1,61 @@
-WIP
+# League of Random
 
-League of Random
+## Project Overview
 
-Descripción del Proyecto
+League of Random is a desktop application designed to generate random combinations of champions, items, and summoner spells for League of Legends. This tool allows players to explore new setups and embrace exciting in-game challenges, sparking creativity and adding a fresh layer of fun.
 
-League of Random es una aplicación de escritorio desarrollada para generar combinaciones aleatorias de campeones, ítems y hechizos de invocador para League of Legends. Esta herramienta permite a los jugadores experimentar nuevas configuraciones y desafíos al azar, promoviendo la creatividad y la diversión en el juego.
+## Key Features
 
-Funcionalidades Principales
+### Random Champion Generation
+- Returns a randomly selected champion with their name, title, and a brief description.
 
-Generación de Campeón Aleatorio: 
+### Random Item Generation
+- Assigns six random items to the generated champion, crafting a unique build each time.
 
-Devuelve un campeón seleccionado aleatoriamente con su nombre, título, y descripción.
-Generación de Ítems Aleatorios: Asigna aleatoriamente seis ítems para el campeón generado.
-Generación de Hechizos de Invocador Aleatorios: Selecciona dos hechizos de invocador al azar.
+### Random Summoner Spell Generation
+- Selects two summoner spells at random to complement the champion's setup.
 
-Filtros Personalizados:
+### Custom Filters
+- **Champion Only:** Generates only a random champion.
+- **Items Only:** Generates only an item setup without champions or spells.
+- **Champion and Items:** Generates a champion along with items, excluding spells.
 
-Solo Campeón: Genera únicamente un campeón aleatorio.
-Solo Ítems: Genera solo una configuración de ítems sin campeones ni hechizos.
-Campeón e Ítems: Genera un campeón junto con ítems, sin hechizos.
+## Technologies Used
 
-Tecnologías Utilizadas
+- **Electron:** Powers the desktop application framework.
+- **JavaScript (Node.js):** Handles backend logic and DOM manipulation.
+- **HTML and CSS:** Structures and styles the user interface.
+- **League of Legends API (Data Dragon):** Provides images and data for champions, items, and spells.
 
-Electron:
+## Development Steps
 
-Para desarrollar la aplicación de escritorio.
-JavaScript (Node.js): Manejo de la lógica del backend y manipulación del DOM.
-HTML y CSS: Estructura y estilo de la interfaz de usuario.
-League of Legends API (Data Dragon): Proporciona imágenes y datos de campeones, ítems y hechizos.
+### Initial Setup
+- Configure the development environment with Electron.
+- Set up basic project structure with HTML, CSS, and JavaScript.
 
-Pasos para Desarrollar la Aplicación
+### Feature Implementation
+- **Champion Generation:** Uses the `ranChampionNameGen()` function to retrieve details for a random champion.
+- **Item and Spell Generation:** Employs custom modules (`items.js` and `summoners.js`) to randomly generate items and summoner spells.
 
-Configuración Inicial:
+### Filter Integration
+- Adds filter options allowing users to specify which elements to generate.
 
-Creación del entorno de desarrollo utilizando Electron.
-Configuración básica del proyecto con HTML, CSS y JavaScript.
+### User Interface
+- Designs an intuitive interface with clear options for generating random configurations.
+- Handles user interaction with click events and dynamic DOM updates.
 
-Implementación de Funcionalidades:
+## How to Use the Application
 
-Generación de Campeones: Utilización de la función ranChampionNameGen() para obtener detalles de un campeón aleatorio.
+### Download and Installation
+1. Clone this repository to your local machine.
+2. Run `npm install` to install dependencies.
+3. Start the application with `npm start`.
 
-Generación de Ítems y Hechizos: Uso de módulos personalizados (items.js y summoners.js) para generar ítems y hechizos de invocador al azar.
+### Usage
+- Select your desired filters.
+- Click the generate button to view random results.
 
-Integración de Filtros:
+## Credits
 
-Implementación de filtros para permitir a los usuarios seleccionar qué elementos desean generar.
+This project was developed by Franco Nahuel Almeida. All rights reserved.
 
-Interfaz de Usuario:
-
-Diseño de una interfaz intuitiva con opciones claras para la generación de configuraciones aleatorias.
-
-Manejo de la interacción del usuario con eventos de clic y actualizaciones dinámicas del DOM.
-
-Cómo Usar la Aplicación
-Descarga e Instalación:
-
-Clona este repositorio en tu máquina local.
-Ejecuta npm install para instalar las dependencias.
-Inicia la aplicación con npm start.
-Uso:
-
-Selecciona los filtros deseados.
-Haz clic en el botón de generación para ver los resultados aleatorios.
-Créditos
-Este proyecto fue desarrollado por Franco Nahuel Almeida. Todos los derechos reservados.
