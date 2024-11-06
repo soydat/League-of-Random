@@ -1,4 +1,5 @@
 # League of Random
+![alt text](https://github.com/soydat/League-of-Random/blob/main/media/preview.jpeg?raw=true)
 
 ## Project Overview
 
