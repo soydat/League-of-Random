@@ -6,13 +6,14 @@ function createWindow() {
         width: 800,
         height: 600,
         resizable:false,
+        icon: 'resources/icon.ico',
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true,
         }
     });
-
     mainWindow.loadFile('index.html');
+    mainWindow.setMenuBarVisibility(false);
 }
 
 app.whenReady().then(createWindow);
