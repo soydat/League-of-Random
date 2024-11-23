@@ -2,7 +2,6 @@
 import { ranChampionNameGen } from './randomizer.js';
 
 function first_button() {
-    console.log("first button function ejecutada")
     const intro = document.querySelector("#intro");
     const mainMenu = document.querySelector("#main__menu");
     const boton = document.querySelector("#first_button");
@@ -26,8 +25,6 @@ function first_button() {
 }
 
 async function RandomizerElement() {
-    console.log("Cargando randomizer.js");
-
     // Obtener datos usando las APIs expuestas
     const itemData = await window.api.getItems();
     const summonerData = await window.api.getSummoners();
@@ -50,19 +47,47 @@ async function RandomizerElement() {
     // Mostrar el filtro desde el inicio
     filtersTab.style.display = "none";
 
-    // Funciones auxiliares para items y summoners
     function getRandomItems(count) {
-        const itemIds = Object.keys(itemData.data);
-        const randomItems = [];
-        for (let i = 0; i < count; i++) {
-            const randomIndex = Math.floor(Math.random() * itemIds.length);
-            randomItems.push(itemIds[randomIndex]);
+    const itemsList = itemData
+    const itemIds = Object.keys(itemsList.data);
+    const elixirFilter = ["Elixir of Iron", "Elixir of Sorcery", "Elixir of Wrath"];
+    const potionFilter = ["Health Potion", "Refillable Potion"];
+    const jungleItems = ["Scorchclaw Pup", "Gustwalker Hatchling", "Mosstomper Seedling"];
+    const doranItems = ["Doran's Shield", "Doran's Blade", "Doran's Ring", "Cull"];
+    const suppItem = "World Atlas"
+    const wards = ["Control Ward"]
+
+    const purchasableItems = itemIds.filter(itemId => {
+        const item = itemsList.data[itemId];
+        return (
+            item.inStore !== false &&
+            item.gold &&                            
+            item.gold.purchasable === true &&       
+            item.gold.base > 0 && 
+            item.maps["11"] === true &&
+            item.name != elixirFilter[0] && item.name != elixirFilter[1] && item.name != elixirFilter[2] &&
+            item.name != potionFilter[0] && item.name != potionFilter[1] &&
+            item.name != jungleItems[0] && item.name != jungleItems[1] && item.name != jungleItems[2] &&
+            item.name != doranItems[0] && item.name != doranItems[1] && item.name != doranItems[2] && item.name != doranItems[3] &&
+            item.name != suppItem && !wards.includes(item.name) && !item.into
+        );
+    });
+
+    const randomItems = [];
+    const usedIndices = new Set();
+
+    while (randomItems.length < count && randomItems.length < purchasableItems.length) {
+        const randomIndex = Math.floor(Math.random() * purchasableItems.length);
+        if (!usedIndices.has(randomIndex)) {
+            usedIndices.add(randomIndex);
+            randomItems.push(purchasableItems[randomIndex]);
         }
-        return randomItems;
     }
+    return randomItems;
+}
 
     function getRandomSummoners(count) {
-        const summonerIds = Object.keys(summonerData.data);
+        const summonerIds = Object.keys(summonerData.data.summoners);
         const randomSummoners = [];
         for (let i = 0; i < count; i++) {
             const randomIndex = Math.floor(Math.random() * summonerIds.length);
@@ -70,7 +95,7 @@ async function RandomizerElement() {
         }
         return randomSummoners;
     }
-    
+
     randomButton.addEventListener("click", async () => {
             filtersTab.style.display = "flex";
             filtersTab.style.left = "0";
@@ -105,7 +130,7 @@ async function RandomizerElement() {
                     
                     setTimeout(()=>{
                         loadingScreenEl.style.display = 'none';
-                    }, 2000)
+                    }, 1500)
             } else if (soloItemsFiltro) {
                     loadingScreenEl.style.display = 'flex';
                     itemSlots.forEach(slot => slot.style.backgroundImage = '');
@@ -117,7 +142,7 @@ async function RandomizerElement() {
                     });
                     setTimeout(()=>{
                         loadingScreenEl.style.display = 'none';
-                    }, 2000)
+                    }, 1500)
             } else if (championAndItemFiltro) {
                 loadingScreenEl.style.display = 'flex';
                 const res = await ranChampionNameGen();
@@ -153,7 +178,7 @@ async function RandomizerElement() {
                     csaImg.style.display = "flex";
                     setTimeout(()=>{
                         loadingScreenEl.style.display = 'none';
-                    }, 2000)
+                    }, 1500)
             }
     });
 }
@@ -178,13 +203,9 @@ function optionsMenu() {
 }
 
 function main() {
-    console.log("main function ejecutada");
     first_button();
-    console.log("main function ejecutada 2");
     RandomizerElement();
-    console.log("main function ejecutada 3");
     optionsMenu();
-    console.log("main function ejecutada 4");
 }
 
 main();

@@ -4,7 +4,6 @@ function getRandomSummoners(count) {
     
     const summonersArray = [] 
 
-
     for (let i = 0; i < count; i++) {
         const randomIndex = Math.floor(Math.random() * SummonerIds.length);
         const randomSummoner = SummonerIds[randomIndex];
