@@ -1,10 +1,9 @@
-const fs = require('fs').promises;
 let champions;
 
 async function getChampionList() {
     try {
-        const data = await fs.readFile('./champions.json', 'utf8');
-        champions = JSON.parse(data);
+        // Usar la API expuesta desde preload.js en lugar de fs
+        champions = await window.api.getChampions();
         return champions;
     } catch (error) {
         console.error("Error loading champion list:", error);
@@ -22,19 +21,20 @@ function getRandomChampion() {
     return champions.data[randomChampionKey];
 }
 
-async function ranChampionNameGen(){
+async function ranChampionNameGen() {
     await getChampionList();
     const randomChampion = getRandomChampion();
     const array = [randomChampion.name, randomChampion.title, randomChampion.blurb, randomChampion.id];
-    return array
+    return array;
 }
 
 async function main() {
     await getChampionList();
     const randomChampion = getRandomChampion();
-    return randomChampion.name
+    return randomChampion.name;
 }
 
 main();
 
-module.exports = { ranChampionNameGen };
+// Cambiar module.exports por export
+export { ranChampionNameGen };

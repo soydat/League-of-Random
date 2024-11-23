@@ -1,26 +1,42 @@
 {
-  "name": "testapp",
+  "name": "league-of-random",
   "version": "1.0.0",
+  "description": "League of Legends champion randomizer",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "build": "electron-builder"
+    "dev": "set NODE_ENV=development && electron .",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "build": {
     "appId": "com.devdat.leagueofrandom",
     "productName": "League of Random",
+    "asar": true,
     "icon": "resources/icon.ico",
     "files": [
       "**/*",
-      "node_modules/**/*",
-      "package.json"
+      "!build/*",
+      "!dist/*"
+    ],
+    "extraResources": [
+      {
+        "from": "./",
+        "to": ".",
+        "filter": [
+          "champions.json",
+          "items.json",
+          "summoners.json"
+        ]
+      }
     ],
     "directories": {
       "output": "build"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "artifactName": "${productName} Setup ${version}.${ext}"
     },
     "mac": {
       "target": "dmg"
@@ -29,10 +45,18 @@
       "target": "AppImage"
     }
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soydat/League-of-Random"
+  },
+  "keywords": [
+    "league",
+    "legends",
+    "random",
+    "champion"
+  ],
+  "author": "Franco Nahuel Almeida (soydat)",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "electron": "^33.0.2",
     "electron-builder": "^25.1.8"

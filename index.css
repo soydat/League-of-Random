@@ -425,7 +425,7 @@ button {
     z-index: 10;
     position: absolute;
     left: 699px;
-    bottom: 450px;
+    bottom: 475px;
 }
 
 .optionsButton{
@@ -514,4 +514,32 @@ button {
     position: absolute;
     left: 12px;
     top: 510px;
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1A1D2E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    opacity: 1;
+}
+
+.spinner {
+    border: 8px solid #6f6ba1; /* Color del fondo */
+    border-top: 8px solid #33d6ff; /* Color del spinner */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

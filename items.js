@@ -10,6 +10,7 @@ function getRandomItems(count) {
 
     const purchasableItems = itemIds.filter(itemId => {
         const item = itemsList.data[itemId];
+        console.log('Purchasable items function fue ejecutada');
         return (
             item.inStore !== false &&
             item.gold &&                            
@@ -20,7 +21,7 @@ function getRandomItems(count) {
             item.name != potionFilter[0] && item.name != potionFilter[1] &&
             item.name != jungleItems[0] && item.name != jungleItems[1] && item.name != jungleItems[2] &&
             item.name != doranItems[0] && item.name != doranItems[1] && item.name != doranItems[2] && item.name != doranItems[3] &&
-            item.name != suppItem && item.name != wards && !item.into
+            item.name != suppItem && !wards.includes(item.name) && !item.into
         );
     });
 

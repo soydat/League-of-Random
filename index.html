@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <script async src="front.js"></script>
-    <script async src="randomizer.js"></script>
+    <script type="module" src="front.js"></script>
     <title>League of Random</title>
 </head>
 <body>
@@ -37,6 +36,10 @@
             </div>
         </div>
         <div id="main__menu">
+            <div class="loading-screen" id="loadingscreen" style="display: none;">
+                <p>Cargando Hex...</p>
+                <div class="spinner">  </div> <!-- Puedes agregar un spinner aquí -->
+            </div>
             <div class="options-button__container">
                 <button class="optionsButton">⚙️</button>
             </div>
@@ -46,8 +49,7 @@
                 <select name="languageSelector" class="languageSelector">
                     <option value="Spanish" selected>Español</option>
                 </select>
-                <div class="creadoPor">Desarrollado por Franco Nahuel Almeida (soydat)
-                    Esta aplicación ha sido creada y desarrollada por Franco Nahuel Almeida, conocido como soydat en GitHub. Todos los derechos reservados.
+                <div class="creadoPor">Esta aplicación ha sido creada y desarrollada por Franco Nahuel Almeida, alias soydat en GitHub. Todos los derechos reservados.
                     Cualquier uso, reproducción o distribución sin autorización está prohibido.</div>
                 <button class="backFromOptionsButton">Volver atras</button>    
             </div>
@@ -95,12 +97,12 @@
                         </label>
                         <label>
                             <p>Campeón, Objetos y Hechizos</p>
-                            <input type="radio" id="championAndItem" class="checkmark" name="filterchoice">
+                            <input type="radio" id="championAndItem" class="checkmark" name="filterchoice" checked>
                         </label>
                     </div>
                 </div>
             </div> 
-            <div class="version">Version 1.0.0</div>
+            <div class="version">Version 1.1.0</div>
         </div>
     </div>
 </body>
